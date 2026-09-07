@@ -31,13 +31,13 @@ importers:
         version: 0.2.0-alpha.2
       '@kamod-ch/signals':
         specifier: ^1.0.3
-        version: 1.0.3(@preact/signals@2.11.1(preact@10.29.8))(preact@10.29.8)
+        version: 1.0.3(@preact/signals@2.11.2(preact@10.29.8))(preact@10.29.8)
       '@nesterow/grip':
         specifier: jsr:^0.0.3
         version: '@jsr/nesterow__grip@0.0.3'
       '@preact/signals':
         specifier: ^2.11.1
-        version: 2.11.1(preact@10.29.8)
+        version: 2.11.2(preact@10.29.8)
       '@valibot/valibot':
         specifier: jsr:^1.4.2
         version: '@jsr/valibot__valibot@1.4.2'
@@ -68,7 +68,7 @@ importers:
         version: 0.7.0
       '@fetch-mock/vitest':
         specifier: ^0.2.18
-        version: 0.2.18(vitest@4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0)))
+        version: 0.2.18(vitest@4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(@vitest/expect@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0)))
       '@preact/preset-vite':
         specifier: ^2.10.6
         version: 2.10.6(@babel/core@7.29.7)(preact@10.29.8)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
@@ -134,7 +134,7 @@ importers:
         version: 0.2.2(@nuxt/kit@4.5.2)(@nuxt/schema@4.5.2)(rolldown@1.2.7)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
       vitest:
         specifier: ^4.1.11
-        version: 4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
+        version: 4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(@vitest/expect@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
 
 packages:
 
@@ -844,8 +844,8 @@ packages:
   '@preact/signals-core@1.14.4':
     resolution: {integrity: sha512-HNB6HYeYKhQbJ1aKl+YRjrS4+QWHLKX6qKoUsfS/m0vqzsVaEBiZiaKbG/e+NKk2ch5ALQr/ihWaMHxiCuuWHA==}
 
-  '@preact/signals@2.11.1':
-    resolution: {integrity: sha512-uYoD+USkacTNU02kfCBkJEV7xabKTmA78W5pnT2GymsuGEC9n/ZO+UT4S96l0dIL6KLDk77VJyUFuOMBvftVHg==}
+  '@preact/signals@2.11.2':
+    resolution: {integrity: sha512-rVTRTt/T0HIRgbugwS5FigbfF/kfdEFYFtiqxa+lbpqTajepqnR0firuAS2iNdHyejWB7Yc9p9QePkVNBtTAwg==}
     peerDependencies:
       preact: '>= 10.25.0 || >=11.0.0-0'
 
@@ -1313,6 +1313,11 @@ packages:
 
   ast-v8-to-istanbul@1.0.5:
     resolution: {integrity: sha512-UPAgKJFSEGMWSDr3LX4tqnAb4f7KGT8O40Tyx8wbYmmZ/yn58lNCm8h3svs3eXgiGd5AXxz8NDOvXWvicq+rJA==}
+    peerDependencies:
+      istanbul-lib-coverage: '*'
+    peerDependenciesMeta:
+      istanbul-lib-coverage:
+        optional: true
 
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
@@ -1857,6 +1862,12 @@ packages:
     resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
     peerDependencies:
       preact: '*'
+      react: '*'
+    peerDependenciesMeta:
+      preact:
+        optional: true
+      react:
+        optional: true
 
   html-encoding-sniffer@6.0.0:
     resolution: {integrity: sha512-CV9TW3Y3f8/wT0BRFc1/KAVQ3TUHiXmaAb6VW9vtiMFf7SLoMd1PdAc4W3KFOFETBJUb90KatHqlsZMWV+R9Gg==}
@@ -2354,6 +2365,11 @@ packages:
 
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
+    peerDependencies:
+      graceful-fs: '*'
+    peerDependenciesMeta:
+      graceful-fs:
+        optional: true
 
   nanoid@3.3.18:
     resolution: {integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==}
@@ -2865,8 +2881,8 @@ packages:
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
-  undici@7.29.0:
-    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
+  undici@7.29.1:
+    resolution: {integrity: sha512-RYONW2MeafgYlkVOKYKkA/Ag7BmXqgIWCa8t1m0JcxrQg9pI9lEqRhAOruOBCbAohOa/gkCF+iPi9hrgvTzu6Q==}
     engines: {node: '>=20.18.1'}
 
   unicode-emoji-modifier-base@1.0.0:
@@ -3002,9 +3018,12 @@ packages:
       '@vitest/browser-webdriverio': 4.1.11
       '@vitest/coverage-istanbul': 4.1.11
       '@vitest/coverage-v8': 4.1.11
+      '@vitest/expect': '*'
       '@vitest/ui': 4.1.11
+      bufferutil: '*'
       happy-dom: '*'
       jsdom: '*'
+      utf-8-validate: '*'
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       '@edge-runtime/vm':
@@ -3023,11 +3042,17 @@ packages:
         optional: true
       '@vitest/coverage-v8':
         optional: true
+      '@vitest/expect':
+        optional: true
       '@vitest/ui':
+        optional: true
+      bufferutil:
         optional: true
       happy-dom:
         optional: true
       jsdom:
+        optional: true
+      utf-8-validate:
         optional: true
 
   w3c-xmlserializer@5.0.0:
@@ -3139,6 +3164,8 @@ snapshots:
       marked: 9.1.6
       marked-terminal: 7.3.0(marked@9.1.6)
       semver: 7.8.5
+    transitivePeerDependencies:
+      - graceful-fs
 
   '@arethetypeswrong/core@0.18.5':
     dependencies:
@@ -3511,10 +3538,10 @@ snapshots:
 
   '@exodus/bytes@1.15.1': {}
 
-  '@fetch-mock/vitest@0.2.18(vitest@4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0)))':
+  '@fetch-mock/vitest@0.2.18(vitest@4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(@vitest/expect@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0)))':
     dependencies:
       fetch-mock: 12.6.0
-      vitest: 4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
+      vitest: 4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(@vitest/expect@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -3555,9 +3582,9 @@ snapshots:
 
   '@jsr/valibot__valibot@1.4.2': {}
 
-  '@kamod-ch/signals@1.0.3(@preact/signals@2.11.1(preact@10.29.8))(preact@10.29.8)':
+  '@kamod-ch/signals@1.0.3(@preact/signals@2.11.2(preact@10.29.8))(preact@10.29.8)':
     dependencies:
-      '@preact/signals': 2.11.1(preact@10.29.8)
+      '@preact/signals': 2.11.2(preact@10.29.8)
       preact: 10.29.8
 
   '@kwsites/file-exists@1.1.1':
@@ -3785,7 +3812,7 @@ snapshots:
 
   '@preact/signals-core@1.14.4': {}
 
-  '@preact/signals@2.11.1(preact@10.29.8)':
+  '@preact/signals@2.11.2(preact@10.29.8)':
     dependencies:
       '@preact/signals-core': 1.14.4
       preact: 10.29.8
@@ -4058,7 +4085,7 @@ snapshots:
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.1.11
-      ast-v8-to-istanbul: 1.0.5
+      ast-v8-to-istanbul: 1.0.5(istanbul-lib-coverage@3.2.2)
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-report: 3.0.1
       istanbul-reports: 3.2.0
@@ -4066,7 +4093,7 @@ snapshots:
       obug: 2.1.4
       std-env: 4.2.0
       tinyrainbow: 3.1.1
-      vitest: 4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
+      vitest: 4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(@vitest/expect@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0))
 
   '@vitest/expect@4.1.11':
     dependencies:
@@ -4159,10 +4186,11 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  ast-v8-to-istanbul@1.0.5:
+  ast-v8-to-istanbul@1.0.5(istanbul-lib-coverage@3.2.2):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       estree-walker: 3.0.3
+      istanbul-lib-coverage: 3.2.2
       js-tokens: 10.0.0
 
   available-typed-arrays@1.0.7:
@@ -4288,6 +4316,8 @@ snapshots:
       parse5: 5.1.1
       parse5-htmlparser2-tree-adapter: 6.0.1
       yargs: 18.1.0
+    transitivePeerDependencies:
+      - graceful-fs
 
   cli-table3@0.6.5:
     dependencies:
@@ -4916,7 +4946,7 @@ snapshots:
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 6.0.2
-      undici: 7.29.0
+      undici: 7.29.1
       w3c-xmlserializer: 5.0.0
       webidl-conversions: 8.0.1
       whatwg-mimetype: 5.0.0
@@ -5114,6 +5144,8 @@ snapshots:
       marked: 9.1.6
       node-emoji: 2.2.0
       supports-hyperlinks: 3.2.0
+    transitivePeerDependencies:
+      - graceful-fs
 
   marked@9.1.6: {}
 
@@ -5868,7 +5900,7 @@ snapshots:
 
   undici-types@6.21.0: {}
 
-  undici@7.29.0: {}
+  undici@7.29.1: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
@@ -5952,7 +5984,7 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitest@4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0)):
+  vitest@4.1.11(@types/node@22.20.1)(@vitest/coverage-v8@4.1.11)(@vitest/expect@4.1.11)(jsdom@29.1.1)(vite@8.2.2(@types/node@22.20.1)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       '@types/node': 22.20.1
       '@vitest/coverage-v8': 4.1.11(vitest@4.1.11)
